@@ -28,12 +28,12 @@ function makeGrid() {
     const tbody = document.querySelector('tbody');
     
     // Create grid rows
-    for (i = 0; i <= gridHeight; i++) {
+    for (i = 1; i <= gridHeight; i++) {
         let newTr = document.createElement('tr');
         tbody.appendChild(newTr);
         
         // Create grid columns
-        for (j = 0; j <= gridWidth; ++j) {
+        for (j = 1; j <= gridWidth; ++j) {
             let newTd = document.createElement('td');
             newTr.appendChild(newTd);
 
