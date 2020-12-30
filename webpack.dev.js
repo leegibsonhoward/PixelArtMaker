@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,15 +7,13 @@ module.exports = {
     target: 'web',
     mode: 'development',
     entry: './src/index.ts',
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development',
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
         }),
     ],
     output: {
@@ -33,13 +30,10 @@ module.exports = {
             {
                 test: /\.scss$/i,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {},
-                    },
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
+                    { loader: "style-loader" },
+                    { loader: "css-loader", options: { sourceMap: true } },
+                    { loader: "postcss-loader", options: { sourceMap: true } },
+                    { loader: "sass-loader", options: { sourceMap: true } },
                 ]
             },
         ]
