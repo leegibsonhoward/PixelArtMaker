@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,16 +25,19 @@
   "homepage": "https://github.com/leegibsonhoward/PixelArtMaker#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^26.0.19",
     "autoprefixer": "^10.1.0",
     "css-loader": "^5.0.1",
     "cssnano": "^4.1.10",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.3.3",
     "postcss-loader": "^4.1.0",
     "rucksack-css": "^1.0.2",
     "sass": "^1.32.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
+    "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.12",
     "typescript": "^4.1.3",
     "webpack": "^5.11.1",
