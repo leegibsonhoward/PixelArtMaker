@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/leegibsonhoward/PixelArtMaker/issues"
   },
-  "homepage": "https://github.com/leegibsonhoward/PixelArtMaker#readme"
+  "homepage": "https://github.com/leegibsonhoward/PixelArtMaker#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0"
+  }
 }
