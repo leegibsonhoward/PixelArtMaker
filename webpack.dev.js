@@ -17,7 +17,15 @@ module.exports = merge(common, {
                 use: [
                     { loader: "style-loader" },
                     { loader: "css-loader", options: { sourceMap: true } },
-                    { loader: "postcss-loader", options: { sourceMap: true } },
+                    { 
+                        loader: "postcss-loader",
+                            options: {
+                                sourceMap: true,
+                                postcssOptions: {
+                                    plugins: ["autoprefixer", "rucksack-css"],
+                                }
+                            },
+                        },
                     { loader: "sass-loader", options: { sourceMap: true } },
                 ]
             },
