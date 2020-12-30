@@ -4,6 +4,7 @@
   "description": "Create 8-bit pixel art",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack serve --open",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,9 @@
   "homepage": "https://github.com/leegibsonhoward/PixelArtMaker#readme",
   "dependencies": {},
   "devDependencies": {
+    "html-webpack-plugin": "^4.5.0",
     "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.0"
+    "webpack-cli": "^4.3.0",
+    "webpack-dev-server": "^3.11.1"
   }
 }
