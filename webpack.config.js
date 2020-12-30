@@ -3,6 +3,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
+    // .browerslistrc not allowing HMR, use target 'web'
+    // https://github.com/webpack/webpack-dev-server/issues/2812
+    target: 'web',
     mode: 'development',
     entry: './src/index.ts',
     devServer: {
@@ -35,6 +38,7 @@ module.exports = {
                         options: {},
                     },
                     'css-loader',
+                    'postcss-loader',
                     'sass-loader',
                 ]
             },
