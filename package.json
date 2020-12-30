@@ -8,8 +8,8 @@
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
     "lint": "eslint -c .eslintrc.ts \"src/**\"",
-    "dev": "webpack serve --open --config webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "dev": "webpack serve --open --config webpack.dev.ts",
+    "build": "NODE_ENV=production webpack --config webpack.prod.ts",
     "test": "jest"
   },
   "repository": {
@@ -30,6 +30,9 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.17",
+    "@types/webpack": "^4.41.25",
+    "@types/webpack-dev-server": "^3.11.1",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
     "autoprefixer": "^10.1.0",

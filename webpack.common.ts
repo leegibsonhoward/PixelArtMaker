@@ -1,7 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+const config: webpack.Configuration = {
     entry: './src/index.ts',
     plugins: [
         new HtmlWebpackPlugin(),
@@ -20,3 +21,5 @@ module.exports = {
         ]
     },
 };
+
+export default config;

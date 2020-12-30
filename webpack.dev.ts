@@ -1,7 +1,8 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+import webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import common from './webpack.common';
 
-module.exports = merge(common, {
+const config: webpack.Configuration = merge(common, {
     // .browerslistrc not allowing HMR, use target 'web'
     // https://github.com/webpack/webpack-dev-server/issues/2812
     target: 'web',
@@ -32,3 +33,5 @@ module.exports = merge(common, {
         ]
     },
 });
+
+export default config;

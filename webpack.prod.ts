@@ -1,10 +1,10 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import common from './webpack.common';
 
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
-
-module.exports = merge(common, {
+const config: webpack.Configuration = merge(common, {
     mode: 'production',
     plugins: [
         new MiniCssExtractPlugin({
@@ -46,3 +46,5 @@ module.exports = merge(common, {
         ]
       }
 });
+
+export default config;
