@@ -6,6 +6,8 @@
   "scripts": {
     "lint": "eslint -c .eslintrc.json \"src/**\"",
     "lint:fix": "eslint -c .eslintrc.json \"src/**\" --fix",
+    "stylelint": "stylelint **/*.{scss,sass} --fix",
+    "stylelint:fix": "stylelint **/*.{scss,sass} --fix",
     "dev": "webpack serve --open --config webpack.dev.ts",
     "build": "NODE_ENV=production webpack --config webpack.prod.ts",
     "test": "jest"
@@ -50,6 +52,9 @@
     "sass": "^1.32.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-scss": "^3.18.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.12",
     "ts-node": "^9.1.1",
