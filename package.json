@@ -4,8 +4,8 @@
   "description": "Create 8-bit pixel art",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint -c .eslintrc.json \"src/**\"",
-    "lint:fix": "eslint -c .eslintrc.json \"src/**\" --fix",
+    "lint": "eslint -c .eslintrc.json \"**/*.ts\"",
+    "lint:fix": "eslint -c .eslintrc.json \"**/*.ts\" --fix",
     "stylelint": "stylelint **/*.{scss,sass} --fix",
     "stylelint:fix": "stylelint **/*.{scss,sass} --fix",
     "dev": "webpack serve --open --config webpack.dev.ts",
