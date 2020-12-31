@@ -4,21 +4,19 @@ import webpack from 'webpack';
 
 const config: webpack.Configuration = {
     entry: './src/index.ts',
-    plugins: [
-        new HtmlWebpackPlugin(),
-    ],
+    plugins: [new HtmlWebpackPlugin()],
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'), 
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
-            { 
+            {
                 test: /\.ts?$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
-        ]
+        ],
     },
 };
 

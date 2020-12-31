@@ -22,29 +22,32 @@ const config: webpack.Configuration = merge(common, {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
-                                plugins: ["autoprefixer", "rucksack-css"],
-                            }
-                        }
+                                plugins: ['autoprefixer', 'rucksack-css'],
+                            },
+                        },
                     },
                     'sass-loader',
-                ]
+                ],
             },
-        ]
+        ],
     },
     optimization: {
         minimizer: [
-          new OptimizeCSSAssetsPlugin({
-            // cssnano configuration
-            cssProcessorPluginOptions: {
-              preset: ['default', {
-                discardComments: {
-                  removeAll: true
-                }
-              }],
-            },
-          })
-        ]
-      }
+            new OptimizeCSSAssetsPlugin({
+                // cssnano configuration
+                cssProcessorPluginOptions: {
+                    preset: [
+                        'default',
+                        {
+                            discardComments: {
+                                removeAll: true,
+                            },
+                        },
+                    ],
+                },
+            }),
+        ],
+    },
 });
 
 export default config;
