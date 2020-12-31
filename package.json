@@ -1,0 +1,67 @@
+{
+  "name": "pixelartmaker",
+  "version": "1.0.0",
+  "description": "Create 8-bit pixel art",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json \"**/*.ts\"",
+    "lint:fix": "eslint -c .eslintrc.json \"**/*.ts\" --fix",
+    "stylelint": "stylelint **/*.{scss,sass} --fix",
+    "stylelint:fix": "stylelint **/*.{scss,sass} --fix",
+    "dev": "webpack serve --open --config webpack.dev.ts",
+    "build": "NODE_ENV=production webpack --config webpack.prod.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leegibsonhoward/PixelArtMaker.git"
+  },
+  "keywords": [
+    "webpack",
+    "pixelart",
+    "typescript"
+  ],
+  "author": "Lee Howard <leegibsonhoward@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leegibsonhoward/PixelArtMaker/issues"
+  },
+  "homepage": "https://github.com/leegibsonhoward/PixelArtMaker#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.17",
+    "@types/webpack": "^4.41.25",
+    "@types/webpack-dev-server": "^3.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "autoprefixer": "^10.1.0",
+    "css-loader": "^5.0.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
+    "mini-css-extract-plugin": "^1.3.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^4.1.0",
+    "prettier": "^2.2.1",
+    "rucksack-css": "^1.0.2",
+    "sass": "^1.32.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-scss": "^3.18.0",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.12",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^5.7.3"
+  }
+}
