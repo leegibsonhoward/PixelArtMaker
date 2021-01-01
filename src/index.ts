@@ -2,8 +2,6 @@ import './main.scss';
 
 import { getElement, getSelector, createElement } from './helpers';
 
-export const sum = (...a: number[]): number => a.reduce((acc, val) => acc + val, 0);
-
 // PixelArtMaker Functions
 
 const addColor = (tableData): void => {
