@@ -10,7 +10,7 @@
     "stylelint:fix": "stylelint **/*.{scss,sass} --fix",
     "dev": "webpack serve --open --config webpack.dev.ts",
     "build": "NODE_ENV=production webpack --config webpack.prod.ts",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:coverage": "jest --coverage"
   },
   "repository": {
