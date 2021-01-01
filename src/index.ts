@@ -4,7 +4,7 @@ import { getElement, getSelector, createElement } from './helpers';
 
 // PixelArtMaker Functions
 
-export const addColor = (tableData): void => {
+export const addColor = (tableData: HTMLElement): void => {
     const colorPicker = getElement('colorPicker') as HTMLInputElement;
     // Add color to clicked on cell in grid
     tableData.addEventListener('click', (event: Event) => {
