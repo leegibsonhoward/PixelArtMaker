@@ -1,61 +1,66 @@
 import './main.scss';
 
-console.log("I'm Alive!");
+import { getElement, getSelector, createElement } from './helpers';
 
 export const sum = (...a: number[]): number => a.reduce((acc, val) => acc + val, 0);
 
-// Select color input
-// Select size input
+// PixelArtMaker Functions
 
-// When size is submitted by the user, call makeGrid()
+const addColor = (tableData): void => {
+    const colorPicker = getElement('colorPicker') as HTMLInputElement;
+    // Add color to clicked on cell in grid
+    tableData.addEventListener('click', (event: Event) => {
+        event.preventDefault();
+        tableData.style.backgroundColor = colorPicker.value;
+    });
+};
 
-function makeGrid() {
-    // Assign main elements to variables for reuse
-    const inputHeight = <HTMLInputElement>document.getElementById('inputHeight');
-    const inputWidth = <HTMLInputElement>document.getElementById('inputWidth');
-    const colorPicker = <HTMLInputElement>document.getElementById('colorPicker');
-    const table = document.querySelector('table');
-
+const resetGrid = (): void => {
+    const table = getSelector('table');
     // Reset table by removing all child elements
     while (table.firstChild) {
         table.firstChild.remove();
     }
+};
+
+const createGrid = (): void => {
+    const inputHeight = getElement('inputHeight') as HTMLInputElement;
+    const inputWidth = getElement('inputWidth') as HTMLInputElement;
+    const table = getSelector('table');
 
     // Create tbody and add as child to table
-    const newTbody = document.createElement('tbody');
+    const newTbody = createElement('tbody');
     table.appendChild(newTbody);
 
-    // Extract input height and width values for use with grid
-    const gridHeight = inputHeight.value;
-    const gridWidth = inputWidth.value;
-
     // Assign created tbody element to variable for reuse
-    const tbody = document.querySelector('tbody');
-
-    let i: number;
-    let j: number;
+    const tbody = getSelector('tbody');
 
     // Create grid rows
-    for (i = 1; i <= Number(gridHeight); i++) {
-        const newTr = document.createElement('tr');
+    for (let i = 1; i <= Number(inputHeight.value); i++) {
+        const newTr = createElement('tr');
         tbody.appendChild(newTr);
 
         // Create grid columns
-        for (j = 1; j <= Number(gridWidth); ++j) {
-            const newTd = document.createElement('td');
+        for (let j = 1; j <= Number(inputWidth.value); ++j) {
+            const newTd = createElement('td');
             newTr.appendChild(newTd);
 
-            // Add color to clicked on cell in grid
-            newTd.addEventListener('click', function (event) {
-                event.preventDefault();
-                newTd.style.backgroundColor = colorPicker.value;
-            });
+            addColor(newTd);
         }
     }
-}
+};
 
-// Wait for submit button before creating grid
-document.addEventListener('submit', function (event) {
-    event.preventDefault();
-    makeGrid();
-});
+const main = (): void => {
+    resetGrid();
+    createGrid();
+};
+
+const waitForSubmit = (): void => {
+    // Wait for submit button before creating grid
+    document.addEventListener('submit', (event: Event) => {
+        event.preventDefault();
+        main();
+    });
+};
+
+waitForSubmit();
