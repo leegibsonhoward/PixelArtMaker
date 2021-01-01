@@ -4,7 +4,7 @@ import { getElement, getSelector, createElement } from './helpers';
 
 // PixelArtMaker Functions
 
-const addColor = (tableData): void => {
+export const addColor = (tableData): void => {
     const colorPicker = getElement('colorPicker') as HTMLInputElement;
     // Add color to clicked on cell in grid
     tableData.addEventListener('click', (event: Event) => {
@@ -13,7 +13,7 @@ const addColor = (tableData): void => {
     });
 };
 
-const resetGrid = (): void => {
+export const resetGrid = (): void => {
     const table = getSelector('table');
     // Reset table by removing all child elements
     while (table.firstChild) {
@@ -21,7 +21,7 @@ const resetGrid = (): void => {
     }
 };
 
-const createGrid = (): void => {
+export const createGrid = (): void => {
     const inputHeight = getElement('inputHeight') as HTMLInputElement;
     const inputWidth = getElement('inputWidth') as HTMLInputElement;
     const table = getSelector('table');
@@ -48,12 +48,12 @@ const createGrid = (): void => {
     }
 };
 
-const main = (): void => {
+export const main = (): void => {
     resetGrid();
     createGrid();
 };
 
-const waitForSubmit = (): void => {
+export const waitForSubmit = (): void => {
     // Wait for submit button before creating grid
     document.addEventListener('submit', (event: Event) => {
         event.preventDefault();
