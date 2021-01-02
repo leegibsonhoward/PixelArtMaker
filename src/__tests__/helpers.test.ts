@@ -8,24 +8,17 @@ describe('Helpers Functions =>', () => {
     });
 
     test('getElement(): returns correct id', () => {
-        const elementID = 'test-id';
-        const newElement = document.createElement('h1');
-        newElement.setAttribute('id', elementID);
-        document.body.appendChild(newElement);
-        expect(getElement(elementID).id).toBe('test-id');
+        document.body.innerHTML = `<h1 id="test-id"></h1>`;
+        expect(getElement('test-id').id).toBe('test-id');
     });
 
     test('getSelector(): returns correct selector', () => {
-        const newElement = 'div';
-        const element = document.createElement(newElement);
-        document.body.appendChild(element);
-        expect(getSelector(newElement).nodeName).toBe('DIV');
+        document.body.innerHTML = `<div></div>`;
+        expect(getSelector('div').nodeName).toBe('DIV');
     });
 
     test('createElement(): creates a new element', () => {
-        const newElement = 'p';
-        const element = document.createElement(newElement);
-        document.body.appendChild(element);
-        expect(createElement(newElement).tagName).toBe('P');
+        document.body.innerHTML = `<p></p>`;
+        expect(createElement('p').tagName).toBe('P');
     });
 });
