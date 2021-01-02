@@ -17,4 +17,12 @@ describe('PixelArtMaker Functions =>', () => {
         // Should return null
         expect(table.firstChild).toEqual(null);
     });
+    test('addColor(): Change background color of td cell on click', () => {
+        document.body.innerHTML = `<input type="color"id="colorPicker" value="#3273c9">
+                                    <table><tbody><tr><td></td></tr></tbody></table>`;
+        const td = document.querySelector('td');
+        addColor(td);
+        td.click();
+        expect(td.style.backgroundColor).toEqual('rgb(50, 115, 201)');
+    });
 });
