@@ -1,4 +1,4 @@
-import { addColor, resetGrid, createGrid, main, waitForSubmit } from '../index';
+import { addColor, resetGrid, createGrid, waitForSubmit } from '../index';
 
 describe('PixelArtMaker Functions =>', () => {
     test('restGrid(): should remove all childnodes from table element', () => {

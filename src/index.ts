@@ -48,16 +48,12 @@ export const createGrid = (): void => {
     }
 };
 
-export const main = (): void => {
-    resetGrid();
-    createGrid();
-};
-
 export const waitForSubmit = (): void => {
     // Wait for submit button before creating grid
     document.addEventListener('submit', (event: Event) => {
         event.preventDefault();
-        main();
+        resetGrid();
+        createGrid();
     });
 };
 
