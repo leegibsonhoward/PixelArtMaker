@@ -54,5 +54,30 @@ describe('PixelArtMaker Functions =>', () => {
         expect(allTd.length).toEqual(256);
     });
 
-    //test('waitForSubmit(): ', () => {});
+    test('waitForSubmit(): reset and create grid with default grid size 16x16 ', () => {
+        document.body.innerHTML = `<h1>Pixel Art Maker</h1>
+
+        <h2>Choose Grid Size</h2>
+        <form id="sizePicker">
+            Grid Height:
+            <input type="number" id="inputHeight" name="height" min="1" value="16">
+            Grid Width:
+            <input type="number" id="inputWidth" name="width" min="1" value="16">
+            <input id="btn" type="submit">
+        </form>
+    
+        <h2>Pick A Color</h2>
+        <input type="color" id="colorPicker">
+    
+        <h2>Design Canvas</h2>
+        <table id="pixelCanvas"></table>`;
+        const query = document.querySelector('input[type=submit]') as HTMLInputElement;
+        waitForSubmit();
+        query.click();
+        const allTr = document.querySelectorAll('tr');
+        const allTd = document.querySelectorAll('td');
+
+        expect(allTr.length).toEqual(16);
+        expect(allTd.length).toEqual(256);
+    });
 });
